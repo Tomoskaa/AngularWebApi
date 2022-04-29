@@ -1,0 +1,45 @@
+{
+  "products": [
+    {
+      "id": 3,
+      "productName": "Asus ZenBook",
+      "description": "Laptop",
+      "price": "77000",
+      "inStock": "Available"
+    },
+    {
+      "id": 4,
+      "productName": "Philips",
+      "description": "TV",
+      "price": "65000",
+      "inStock": "Available"
+    },
+    {
+      "id": 6,
+      "productName": "Hp",
+      "description": "Laptop",
+      "price": "95000",
+      "inStock": "Available"
+    }
+  ],
+  "signupUsers": [
+    {
+      "fullname": "test",
+      "email": "test@gmail.com",
+      "password": "test1234",
+      "mobile": "077924906",
+      "id": 1
+    },
+    {
+      "fullname": "admin",
+      "email": "admin@gmail.com",
+      "password": "admin123",
+      "mobile": "070232903",
+      "userRole": "Admin",
+      "id": 2
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

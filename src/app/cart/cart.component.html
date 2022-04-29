@@ -1,0 +1,68 @@
+<div *ngIf="products.length !=0">
+    <div class="container mt-3">
+        <div class="card-table">
+            <div class="cart-product">
+                <table class="table table-responsive">
+                    <thead>
+                        <tr>
+                            <th>Sr.No</th>
+                            <th>Product Name</th>
+                            <th>Product Image</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let product of products; let i = index">
+                            <td>{{i+1}}</td>
+                            <td>{{product.productName}}</td>
+                            <td><img style="width: 120px;" src="{{product.image}}" alt=""></td>
+                            <td style="width: 25%;">{{product.description}}</td>
+                            <th style="width: 12%;">{{product.price}}</th>
+                            <td style="width: 12%;">{{product.quantity}}</td>
+                            <td style="width: 12%;">{{product.total}}</td>
+                            <td>
+                                <button (click)="removeItem(product)" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"></td>
+                            <td></td>
+                            <td></td>
+                            <td><strong>Total Price : ${{totalPrice}}</strong></td>
+                            <td></td>
+                        </tr>                
+                    </tbody>
+                </table>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <button routerLink="/products" class="btn btn-warning text-light" style="height: 45px;
+            width: 195px;"> <i class='fa fa-chevron-left'></i> Continue Shopping</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-success" style="margin-left: 440px;
+                    height: 45px;
+                    width: 110px;">Checkout <i class='fa fa-chevron-right'></i> </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div *ngIf="products.length ==0">
+    <div class="container mt-5 text-center">
+        <div class="card bg-dark text-primary">
+            <h5 class="card-title fs-1">My Cart</h5>
+        </div>
+        <div class="center">
+            <h4>Your cart is empty!</h4>
+            <h6>Add item to it now</h6>
+            <button routerLink="/products" class="btn btn-primary">Shop Now</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="container">  
+    <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 bg-dark p-5 mt-5 mx-auto">
+        <div>
+            <div class="text-center mb-3">
+                <h1 class="text-primary">Sign Up</h1>
+            </div>
+            
+            <form [formGroup]="signupForm" (ngSubmit)="signUp()">
+                <div class="col-md-12 col-sm-12 mb-3">
+                    <input type="text" formControlName="fullname" class="form-control" placeholder="Full Name"> 
+                    <small class="text-danger" *ngIf="signupForm.get('fullname')?.invalid && signupForm.get('fullname')?.touched">*FullName is required</small> 
+                </div>
+
+                <div class="col-md-12 col-sm-12 mb-3">
+                    <input type="email" formControlName="username" class="form-control" placeholder="Email Address"> 
+                    <small class="text-danger" *ngIf="signupForm.get('username')?.invalid && signupForm.get('username')?.touched">*Email is required</small> 
+                </div>
+
+                <div class="col-md-12 col-sm-12 mb-3">
+                    <input type="password" formControlName="password" class="form-control" placeholder="Password"> 
+                    <small class="text-danger" *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched">*Password is required</small> 
+                </div>
+                
+                <div class="col-md-12 col-sm-12 mb-3">
+                    <input type="text" formControlName="mobile" class="form-control" placeholder="Mobile Phone"> 
+                    <small class="text-danger" *ngIf="signupForm.get('mobile')?.invalid && signupForm.get('mobile')?.touched">*Phone is required (numbers are only allowed)</small> 
+                </div>
+
+                <div class="col-md-12 col-sm-12 mb-3">
+                    <select class="form-select form-control" formControlName="userRole">
+                        <option selected value="Select User Role">Select User Role</option>
+                        <option value="Admin">Admin</option>
+                        <option value="User">User</option>
+                    </select>
+                    <small class="text-danger" *ngIf="signupForm.get('userRole')?.invalid && signupForm.get('userRole')?.touched">*Please choose a role</small>
+                </div>
+                
+                <div class="col-md-12 col-sm-12 mb-3">
+                    <a href="#"><button type="btn" class="btn btn-primary form-control">Sign Up</button></a><br>
+                </div>
+                <p align="center" class="text-light">Already registered ?
+                <a routerLink="/login" class="text-primary">Click to Login!</a></p>
+        </form>
+        </div>
+    </div>
+</div>
